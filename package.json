@@ -1,0 +1,31 @@
+{
+  "name": "lanst-language-support",
+  "displayName": "Lanst Language Support",
+  "description": "Add support for the Lanst programming language in Visual Studio Code.",
+  "publisher": "aimarekin",
+  "version": "1.0.0",
+  "icon": "./images/lanst_ico.png",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "lanst",
+      "aliases": ["Lanst", "lanst"],
+      "extensions": [".lan"],
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "light": "./images/lanst.png",
+        "dark": "./images/lanst.png"
+      }
+    }],
+    "grammars": [{
+      "language": "lanst",
+      "scopeName": "source.lanst",
+      "path": "./syntaxes/lanst.tmLanguage.json"
+    }]
+  }
+}

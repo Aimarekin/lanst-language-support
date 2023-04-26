@@ -1,0 +1,102 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Lanst",
+	"patterns": [
+		{ "include": "#comments" },
+		{ "include": "#keywords" },
+		{ "include": "#punctuation" },
+		{ "include": "#values" }
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.block.lanst",
+					"begin": "\\?\\*",
+					"beginCaptures": {
+						"1": { "name": "punctuation.definition.comment.begin.lanst" }
+					},
+					"end": "\\*\\?",
+					"endCaptures": {
+						"1": { "name": "punctuation.definition.comment.end.lanst" }
+					}
+				},
+				{
+					"name": "comment.line.lanst",
+					"match": "(\\?).*$",
+					"captures": {
+						"1": { "name": "punctuation.definition.comment.lanst" }
+					}
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"match": "\\b(?:(resl?o?c?k?)|(memoize)|(fn)|(if)|(while)|(throw)|(internal_do_enable_debugger))\\b",
+					"captures": {
+						"1": { "name": "storage.type.lanst" },
+						"2": { "name": "storage.type.function.lanst" },
+						"3": { "name": "storage.type.function.lanst" },
+						"4": { "name": "keyword.control.conditional.lanst" },
+						"5": { "name": "keyword.control.loop.lanst" },
+						"6": { "name": "keyword.control.trycatch.lanst" },
+						"7": { "name": "keyword.other.lanst" }
+					}
+				}
+			]
+		},
+		"punctuation": {
+			"patterns": [
+				{
+					"match": "({|})|(\\(|\\))|(\\[|\\])|(\\.)|(,)|(==|[><])|(=)|([+\\-*/])|(;)|(:)",
+					"captures": {
+						"1": { "name": "punctuation.brace.curly.lanst" },
+						"2": { "name": "punctuation.brace.round.lanst" },
+						"3": { "name": "punctuation.brace.square.lanst" },
+						"4": { "name": "punctuation.accessor.lanst" },
+						"5": { "name": "punctuation.separator.lanst" },
+						"6": { "name": "keyword.operator.comparison.lanst" },
+						"7": { "name": "keyword.operator.assignment.lanst" },
+						"8": { "name": "keyword.operator.arithmetic.lanst" },
+						"9": { "name": "punctuation.terminator.statement.lanst" },
+						"10": { "name": "punctuation.separator.key-value.lanst" }
+					}
+				}
+			]
+		},
+		"values": {
+			"patterns": [
+				{
+					"name": "constant.numeric.lanst",
+					"match": "\\b\\d+\\.?\\d*|\\d*\\.?\\d+\\b"
+				},
+				{
+					"name": "string.quoted.double.lanst",
+					"match": "(\").*?(\")",
+					"captures": {
+						"1": { "name": "punctuation.definition.string.begin.lanst" },
+						"2": { "name": "punctuation.definition.string.end.lanst" }
+					}
+				},
+				{
+					"name": "invalid.illegal.unterminated-string.lanst",
+					"match": "\".*"
+				},
+				{
+					"match": "\\b(?:(true)|(false)|(nirv))\\b",
+					"captures": {
+						"1": { "name": "constant.language.boolean.true.lanst" },
+						"2": { "name": "constant.language.boolean.false.lanst" },
+						"3": { "name": "constant.language.null.lanst" }
+					}
+				},
+				{
+					"name": "variable.other.readwrite.lanst",
+					"match": "\\b[a-zA-Z_]+\\b"
+				}
+			]
+		}
+	},
+	"scopeName": "source.lanst"
+}
