@@ -4,7 +4,11 @@
   "description": "Add support for the Lanst programming language in Visual Studio Code.",
   "publisher": "aimarekin",
   "version": "1.0.0",
-  "icon": "./images/lanst_ico.png",
+  "icon": "images/lanst_ico.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aimarekin/lanst-language-support"
+  },
   "engines": {
     "vscode": "^1.77.0"
   },
