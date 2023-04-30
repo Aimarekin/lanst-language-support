@@ -43,6 +43,14 @@
 						"6": { "name": "keyword.control.trycatch.lanst" },
 						"7": { "name": "keyword.other.lanst" }
 					}
+				},
+				{
+					"match": "\\b(?:(class)|(new))(?:\\s+([a-zA-Z_]+))?",
+					"captures": {
+						"1": { "name": "storage.type.class.lanst" },
+						"2": { "name": "keyword.operator.new.lanst"},
+						"3": { "name": "entity.name.type.class.lanst" }
+					}
 				}
 			]
 		},
@@ -84,11 +92,12 @@
 					"match": "\".*"
 				},
 				{
-					"match": "\\b(?:(true)|(false)|(nirv))\\b",
+					"match": "\\b(?:(true)|(false)|(nirv)|(self))\\b",
 					"captures": {
 						"1": { "name": "constant.language.boolean.true.lanst" },
 						"2": { "name": "constant.language.boolean.false.lanst" },
-						"3": { "name": "constant.language.null.lanst" }
+						"3": { "name": "constant.language.null.lanst" },
+						"4": { "name": "constant.language.self.lanst" }
 					}
 				},
 				{
